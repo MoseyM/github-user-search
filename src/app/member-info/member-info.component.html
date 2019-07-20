@@ -1,0 +1,20 @@
+<div class="member-info-box" *ngIf="memberInfo">
+    <div>
+        <a href="{{ memberInfo.html_url}}" target="_blank"><img src="{{ memberInfo.avatar_url }}"></a>
+        <h2>{{memberInfo.name}}</h2>
+        <span>Member Since: {{ memberInfo.created_at | date}}</span>
+    </div>
+    <div *ngIf="favoriteMembers && favoriteMembers.length; else noFavsBlock;">
+        <h5>Followers of {{ memberInfo.name}}</h5>
+        <p>{{ favoriteMembers.length }}</p>
+        <div *ngFor="let favorite of favoriteMembers">
+            <div>
+                <img src="{{ favorite.avatar_url }}">
+                <span>{{ favorite.name }}</span>
+            </div>
+        </div>
+    </div>
+    <ng-template #noFavsBlock>
+        <h5>No Followers</h5>
+    </ng-template>
+</div>
