@@ -8,9 +8,9 @@
         <h5>Followers of {{ memberInfo.name}}</h5>
         <p>{{ favoriteMembers.length }}</p>
         <div *ngFor="let favorite of favoriteMembers">
-            <div>
-                <img src="{{ favorite.avatar_url }}">
-                <span>{{ favorite.name }}</span>
+            <div class="fav-div">
+                <a href="{{ favorite.html_url }}"><img src="{{ favorite.avatar_url }}"></a>
+                <p>{{ favorite.login }}</p>
             </div>
         </div>
     </div>
