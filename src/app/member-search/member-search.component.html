@@ -5,10 +5,4 @@
         name="memberName"
         (keyup.enter)="getMemberStats(memberName)"
         type="text">
-
-    <div *ngIf="member">
-        <img class="small-icon" src={{member.avatar_url}}>
-        <h2>{{ member.name }}</h2>
-        <h4>{{ member.login }}</h4>
-    </div>
 </div>
